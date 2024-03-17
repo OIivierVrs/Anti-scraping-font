@@ -35,6 +35,7 @@ function decrypt_file($file_path, $key) {
 function init_encrypted_fonts($arr_fonts, $encryption_level = 1){
     $html = "<style>";
     foreach($arr_fonts as $font){
+        
         # We get all the ttf files that match the font name
         $files = glob($GLOBALS['env']['FONTS_FOLDER']."encrypted/$font*.ttf");
 
@@ -49,7 +50,7 @@ function init_encrypted_fonts($arr_fonts, $encryption_level = 1){
     return $html;
 }
 
-function encrypt_texte($texte, $font, $encryption_level = 1){
+function encrypt_text($texte, $font, $encryption_level = 1){
 
     if($texte == ""){
         return "";
@@ -77,9 +78,6 @@ function encrypt_texte($texte, $font, $encryption_level = 1){
         
         // Decrypt the mapping key
         $decrypted_data = decrypt_file($encrypted_file_path, $key);
-        
-        // Remove PKCS7 padding
-        #$decrypted_data = str_replace("\x07", '', $decrypted_data);
         
         // Convert decrypted data to array (assuming JSON format)
         $mapping = $decrypted_data;
