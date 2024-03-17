@@ -23,9 +23,9 @@ ini_set('display_errors', 1);
     <body>
         <h1>Anti Scraping Example</h1>
 
-        <p>Je souhaite cacher ce numéro : <?PHP echo encrypt_texte("0601020304", "Roboto-Black"); ?></p>
+        <p>Je souhaite cacher ce numéro : <?PHP echo encrypt_text("0601020304", "Roboto-Black"); ?></p>
 
-        <p>Et cet adresse email j'y tiens encore plus : <?PHP echo encrypt_texte("adresseemail@supersecrete.com", "Roboto-Medium", 5); ?></p>
+        <p>Et cet adresse email j'y tiens encore plus : <?PHP echo encrypt_text("adresseemail@supersecrete.com", "Roboto-Medium", 5); ?></p>
     </body>
 </html>
 
