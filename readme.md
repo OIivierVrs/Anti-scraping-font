@@ -1,40 +1,51 @@
-# Verschu Anti Scraping
+# ASF Anti Scraping Fonts 
 
 ![screenshot](images/presentation.jpg)
 
+## Introduction
+
+ASF is a new way to protect sensitive public data such as telephone numbers, email addresses, etc. This system uses fonts as an encryption key for your sensitive data, the data displayed on the screen is different of the data displayed in the source code, making data scraping considerably more difficult
+
 ## Installation
 
-Créer le fichier .env à la racine du projet avec ces variables
+Create the .env file at the root of the project with these variables
 
 ```bash
 ENCRYPT_KEY="" # Clé de 16 caractères alphanumériques
 FONTS_FOLDER="" # Chemin absolu vers le dossier fonts
 ```
 
-Pour installer les dépendances python :
+Install python dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-On génère ensuite les fonts encryptées
+Generate encrypted fonts
 
 ```bash
 python3 generate_fonts.py
 ```
-Puis on accède à l'index.php dans un navigateur et c'est tout!
+
+Then we access the index.php in a browser and that's it!
+
+
+## Downsides and areas for improvement
+
+This method cannot be used on text that is intended to be indexed by search engines since the text read by robots is encrypted.
+This method does not yet solve the problem of screen readers for visually impaired people. This problem can be solved with the integration of a phonetic conversion instead of the encryption method
+
 
 ## Roadmap
 - [X] POC V1
-- [ ] Changer le nom de la font en MD5 + Base64
-- [ ] Modifier l'appel @font-face pour "data:application/font-woff;base64"
-- [ ] Nom de classe CSS différent du nom de la font
-- [ ] Convertir les polices TTF de base en WOFF
-- [ ] Mélanger et encrypter le mapping des glyphs
-- [ ] Fonction de conversion en phonétique pour les screenreaders
-- [ ] Optimisation et tests de performances
-- [ ] Faire le schéma d'encryption et le mettre en image principale du repo
+- [ ] Change the font name to MD5 + Base64
+- [ ] Use a CSS class name different from the font name
+- [ ] Convert base TTF fonts to WOFF
+- [ ] Shuffle and encrypt the glyph mapping
+- [ ] Add a phonetic conversion function for screen readers
+- [ ] Optimize and perform performance testing
+- [ ] Create the encryption schema and set it as the main image of the repository
 
 ## License
 
-[Verschu License]
+AGPL v3
