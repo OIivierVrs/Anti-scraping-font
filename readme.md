@@ -11,8 +11,8 @@ ASF is a new way to protect sensitive public data such as telephone numbers, ema
 Create the .env file at the root of the project with these variables
 
 ```bash
-ENCRYPT_KEY="" # Clé de 16 caractères alphanumériques
-FONTS_FOLDER="" # Chemin absolu vers le dossier fonts
+ENCRYPT_KEY="" # 16 alphanumeric characters key
+FONTS_FOLDER="" # Absolute path to fonts folder
 ```
 
 Install python dependencies
